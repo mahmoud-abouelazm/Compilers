@@ -55,6 +55,7 @@ int main()
       reverse(reversedb1.begin() , reversedb1.end());
       reverse(reversedb2.begin() , reversedb2.end());
       anotherString:;
+      cout << "Enter input string : ";
       cin >> input;
       cout << "The input string : "; 
       cout << '[';
@@ -91,6 +92,12 @@ int main()
               Stack.pop_back();
           }
       }
+      string ans ;
+      if(Stack.empty() and i == input.size()){
+         ans = "Accepted";
+      }else{
+          ans = "Rejected";
+      }
       cout << "Stack after check : ";
       cout << '[';
       for(char i : Stack)cout << i << " ";
@@ -98,16 +105,13 @@ int main()
       cout << endl;
       
       cout << "Rest of unchecked input : ";
+      
       cout << '[';
       for(; i < input.size() ; i++)cout << input[i] << " ";
       cout << ']';
       cout << endl;
-      cout << "Your string is ";
-      if(Stack.empty()){
-          cout << "Accepted" << endl;
-      }else{
-          cout << "Rejected" << endl;
-      }
+      
+      cout << "Your string is " << ans;
       cout << endl << "=======================================================";
       cout << endl;
       cout << "1.Another Grammar \n2.Another string\n3.Exit\n";
