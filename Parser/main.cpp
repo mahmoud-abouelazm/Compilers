@@ -67,22 +67,24 @@ int main()
       int i = 0 ;
       for(; i < input.size() and not Stack.empty() ; i++){
           if(Stack.back() == 'S'){
-              Stack.pop_back();
               if(input[i] == s1[0]){
+                Stack.pop_back();
                 for(char c : reverseds1)Stack.push_back(c);
                 i--;
               }else if(input[i] == s2[0]){
+                Stack.pop_back();
                 for(char c : reverseds2)Stack.push_back(c);
                 i--;
               }else{
                   break;
               }
           }else if(Stack.back() == 'B'){
-              Stack.pop_back();
               if(input[i] == b1[0]){
+                Stack.pop_back();
                 for(char c : reversedb1)Stack.push_back(c);
                 i--;
               }else if(input[i] == b2[0]){
+                Stack.pop_back();
                 for(char c : reversedb2)Stack.push_back(c);
                 i--;
               }else{
